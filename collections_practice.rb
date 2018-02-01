@@ -1,1 +1,11 @@
-sort_arry_arc
+def sort_array_asc(array)
+  array.sort
+end
+
+def sory_array_desc(array)
+  array.sort do |a, b|
+    b <==> a
+  end
+end
+
+
