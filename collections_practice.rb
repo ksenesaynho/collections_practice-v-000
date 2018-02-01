@@ -8,4 +8,8 @@ def sory_array_desc(array)
   end
 end
 
-def sort_array_char_count
+def sort_array_char_count(array)
+  array.sort do |left, right|
+    right <=> left
+  end
+end
