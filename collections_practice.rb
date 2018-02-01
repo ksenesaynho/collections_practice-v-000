@@ -4,21 +4,20 @@ def sort_array_asc(array)
   array.sort
 end
 
-def sory_array_desc(array)
-  array.sort do |a, b|
-    b <==> a
+def sort_array_desc(array)
+  array.sort do | left, right|
+    right <=> left
   end
 end
 
 def sort_array_char_count(array)
   array.sort do |left, right|
-    right <=> left
+    left.length <=> right.length
   end
 end
 
-
 def swap_elements(array)
-  array[1], array[2] == arrray[2], array[1]
+  array[1], array[2] = array[2], array[1]
   array
 end
 
@@ -28,7 +27,7 @@ end
 
 def kesha_maker(array)
   array.each do |item|
-    item{[2] = "$"
+    item[2] = "$"
   end
 end
 
@@ -36,21 +35,38 @@ def find_a(array)
   array.find_all do |word|
     word[0] == "a"
   end
-  
-  def sum_array(array)
-    sum = 0
-    array.each do |num|
-      sum += num
-    end
-    sum
+
+  # using select method
+    # array.select do |word|
+    #   word[0] == "a"
+    # end
+end
+
+def sum_array(array)
+  sum = 0
+  array.each do |num|
+    sum+=num
   end
-  
-  def add_s(array)
-    array.collect do |word|
-      if array[1] == word
-        word
-      else
-        word + "s"
-      end
+  sum
+
+  # using reduce method
+    # array.reduce(:+)
+
+  # using inject method (short)
+     # array.inject(:+)
+
+  # using inject method (long)
+     # array.inject do |sum,x|
+     #  sum + x
+     # end
+end
+
+def add_s(array)
+  array.collect do |word|
+    if array[1] == word
+      word
+    else
+      word + "s"
     end
   end
+end
